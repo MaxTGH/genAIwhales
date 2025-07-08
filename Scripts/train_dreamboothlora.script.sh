@@ -7,8 +7,8 @@ conda activate WhaleImageGen
 
 export MODEL_NAME="stabilityai/stable-diffusion-xl-base-1.0"
 # export INSTANCE_DIR="C:/Users/hs325/Downloads/25humpbackwhale"
-export INSTANCE_DIR="E:/MaxSmartWhales/TrainDreamboothHWIMGs/New"
-export OUTPUT_DIR="E:/MaxSmartWhales/ModelsV2/SDXL5e-4GAS2TBS3"
+export INSTANCE_DIR="E:/MaxSmartWhales/genAIwhales/TrainDreamboothHWIMGs/New"
+export OUTPUT_DIR="E:/MaxSmartWhales/genAIwhales/ModelsV2/SDXL5e-4GAS2TBS3"
 export CUDA_VISIBLE_DEVICES=0
 
 #train_dreambooth_lora.sdxl.py
@@ -19,9 +19,9 @@ accelerate launch train_dreambooth_lora_sdxl.py \
   --output_dir="$OUTPUT_DIR" \
   --instance_prompt="a drone image of a humpback whale" \
   --resolution=512 \
-  --train_batch_size=3 \
-  --gradient_accumulation_steps=2 \
-  --learning_rate=5e-4 \
+  --train_batch_size=2 \
+  --gradient_accumulation_steps=1 \
+  --learning_rate=2.5e-4 \
   --lr_scheduler="constant" \
   --lr_warmup_steps=0 \
   --max_train_steps 100 \
